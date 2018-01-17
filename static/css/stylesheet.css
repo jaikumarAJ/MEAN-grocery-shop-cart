@@ -1,0 +1,546 @@
+@font-face {
+
+    font-family: "ribeye";
+    src: url(fonts/Ribeye-Regular.ttf);
+
+}
+
+html{
+
+    height: 100%;
+
+}
+
+
+body{
+
+    background-image: url("../images/back7.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    height: 100%;
+
+}
+
+
+.header-div{
+
+    font-weight: 300;
+    font-family: "ribeye";
+    font-size: 50px; 
+
+}
+
+
+.header-text-row{
+
+    height:75%;
+    font-size: 60px;
+    font-weight: 700;
+    position: relative;
+    right: 40px;
+    top: 20px;
+
+}
+
+
+.trans-div{
+
+    position: relative;
+    background: rgba(225, 255, 225, 0.6);
+    border-radius: 5px;
+    border: 2px solid #89b613;
+    font-size: 25px;
+    color: black;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 50px;
+    padding: 15px;
+    box-shadow: 2px 18px 20px #113311;
+
+}
+
+
+.trans-div-store{
+
+    position: relative;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    font-size: 25px;
+    color: black;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px;
+    margin-bottom: 50px;
+    box-shadow: 2px 18px 20px #113311;
+    border: 3px solid #0063b2;
+
+}
+
+
+.header-div-store{
+
+    position: relative;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    border: 3px solid #0063b2;
+    font-size: 25px;
+    color: black;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 15px;
+
+}
+
+
+.trans-div-green{
+
+    position: relative;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    border: 3px solid #89b613;
+    font-size: 25px;
+    color: black;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 15px;
+    margin-bottom: 50px;
+    box-shadow: 2px 18px 20px #113311;
+
+}
+
+
+.trans-div-categories{
+
+    position: relative;
+    background: rgba(225, 255, 225, 0.6);
+    border-radius: 5px;
+    border: 2px solid #89b613;
+    font-size: 25px;
+    color: black;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 50px;
+    padding: 15px;
+    box-shadow: 0px 5px 5px #113311;
+
+}
+
+
+.form-text{
+
+    color: black;
+    font-size: 25px;
+
+}
+
+
+.tucantext{
+
+    color: #89b613;
+
+}
+
+
+.tucantext a:hover{
+
+    text-decoration: none;
+
+}
+
+
+.coraltext{
+
+color: #ca1d20;
+
+}
+
+
+.bluetext{
+
+color:#0063b2
+
+}
+
+
+.mybtn{
+
+    background-color: #89b613;
+    margin-left: 15px;
+    color: white;
+    box-shadow: 5px 5px 5px #002200;
+
+}
+
+
+.mybtn-red{
+    
+        background-color: #ca1d20;
+        margin-left: 15px;
+        color: white;
+        box-shadow: 5px 5px 5px #002200;
+    
+}
+
+
+.checkout-btn{
+
+    position: relative;
+    right: 10px;
+    width: 100%;
+    margin: 10px;
+
+}
+
+
+.checkout-btn-disabled{
+
+    background-color: #555555;
+    color: white;
+
+}
+
+
+.cartToggleButton{
+
+    height: 50px;
+    width: 50px;
+    color: white;
+    margin: 10px;
+    position: relative;
+    bottom: 15px;
+
+}
+
+
+.cart{
+
+    height: auto;
+
+}
+
+
+#sideBarContent{
+
+    width: 250px;
+    height: 290px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+}
+
+.shoppingcarticon{
+
+    position: relative;
+    right: 12px;
+
+}
+
+
+.checkout{
+
+margin-top: 5px;
+
+}
+
+
+.total{
+
+    font-size: 30px;
+    margin-top: 5px;
+    margin-left: 15px;
+
+}
+
+
+
+/*.sideBarClosed{
+
+
+
+}*/
+
+
+.logo{
+
+    height:100px;
+    width:100px; 
+    box-shadow: 5px 10px 15px #113311;
+
+}
+
+
+.mainView{
+
+    padding: 0px;
+
+}
+
+
+.products-container{
+
+    position: relative;
+    bottom: 20px;
+    overflow-y: auto;
+    height: 370px;
+
+}
+
+
+.product{
+
+    font-size: 20px;
+
+}
+
+
+.product-container{
+
+    position: relative;
+    top: 90px;
+
+}
+
+
+.product-img{
+
+    box-shadow: 5px 5px 5px #002200;
+    height:150px;
+    width:150px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+
+.product-img-big{
+
+    box-shadow: 5px 5px 5px #002200;
+    height:225px;
+    width:225px;
+    margin-top: 10px;
+
+}
+
+
+.cart .trans-div-store .btn-product{
+
+    height: 60px;
+    width: 100px;
+    font-size: 30px;
+
+}
+
+
+.remove-cart-item-icon:hover{
+
+    color: #ca1d20;
+
+}
+
+
+.category{
+
+    position: relative;
+    bottom: 2px;
+    border: 2px solid #0063b2;
+    background-color: rgba(00, 99, 178, 0.2);
+    box-shadow: 5px 5px 5px #001111;
+    font-size: 20px;
+    margin: 10px;
+    border-radius: 5px;
+
+}
+
+
+.category:hover{
+
+    border: 2px solid #ca1d20;
+    background-color: rgba(200, 200, 250, 0.2);
+
+}
+
+.nis{
+
+    text-transform: lowercase;
+    font-size: 15px;
+
+}
+
+
+.bill{
+
+    padding: 30px;
+    font-size: 15px;
+
+}
+
+        /* *** credit card form *** */
+
+.checkOutForm{
+
+    border-left: 1px solid #555555;
+
+}
+
+.creditCardForm {
+
+    border-left: 1px solid #555555;
+    max-width: 700px;
+    overflow: hidden;
+    padding-left: 60px;
+
+}
+
+
+.creditCardForm label {
+
+    width: 100%;
+    margin-bottom: 10px;
+
+}
+
+
+.heading h1 {
+
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 25px;
+    border-bottom: 1px solid black;
+
+}
+
+
+.creditCardForm .payment {
+
+    float: left;
+    font-size: 18px;
+    position: relative;
+
+}
+
+
+.creditCardForm .payment .form-group {
+
+    float: left;
+    margin-bottom: 10px;
+
+}
+
+.creditCardForm .payment .form-control {
+
+    line-height: 30px;
+    height: auto;
+    padding: 0 10px;
+    
+}
+
+
+.creditCardForm .owner {
+
+    width: 63%;
+    margin-right: 10px;
+
+}
+
+
+.creditCardForm .details {
+
+    width: 90%;
+    margin-right: 10px;
+
+}
+
+
+.creditCardForm .CVV {
+
+    width: 35%;
+    clear: both;
+
+}
+
+
+.creditCardForm #card-number-field {
+
+    width: 100%;
+
+}
+
+
+.creditCardForm #expiration-date {
+
+    width: 39%;
+    float: left;
+
+}
+
+
+.creditCardForm #credit_cards {
+
+    float: left;
+    width: 59%;
+    margin-top: 15px;
+    text-align: right;
+
+}
+
+
+.creditCardForm #pay-now {
+
+    width: 100%;
+    margin-top: 20px;
+
+}
+
+
+.creditCardForm .payment .btn {
+
+    width: 100%;
+    margin-top: 3px;
+    font-size: 24px;
+    background-color: #2ec4a5;
+    color: white;
+
+}
+
+
+.creditCardForm .payment select {
+
+    padding: 2px;
+    margin-right: 15px;
+
+}
+
+.transparent {
+
+    opacity: 0.2;
+
+}
+
+
+.not-valid{
+
+    color: red;
+
+}
+
+
+@media(max-width: 650px) {
+
+    .creditCardForm .owner,
+    .creditCardForm .CVV,
+    .creditCardForm #expiration-date,
+    .creditCardForm #credit_cards {
+        width: 100%;
+
+    }
+
+
+    .creditCardForm #credit_cards {
+
+        text-align: left;
+
+    }
+
+}

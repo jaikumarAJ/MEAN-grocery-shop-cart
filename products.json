@@ -1,0 +1,5 @@
+{"_id":{"$oid":"5a5583bca058e34d3887c0da"},"productId":{"$numberLong":"1"},"productName":"milk","category":"milk and eggs","price":6.3,"img":"products/milk.jpg"}
+{"_id":{"$oid":"5a558445a058e34d3887c0db"},"productId":{"$numberLong":"2"},"productName":"bread","category":"milk and eggs","price":5.0,"img":"products/bread.jpg"}
+{"_id":{"$oid":"5a558483a058e34d3887c0dc"},"productId":{"$numberLong":"3"},"productName":"eggs","category":"milk and eggs","price":13.0,"img":"products/eggs.png"}
+{"_id":{"$oid":"5a5891290c6c670368176281"},"productId":4,"productName":"chicken","category":"meat and fish","price":"20","img":"products/chicken.jpg"}
+{"_id":{"$oid":"5a5891e10c6c670368176282"},"productId":5,"productName":"meat","category":"meat and fish","price":"100","img":"products/meat.jpg"}

@@ -1,0 +1,107 @@
+<div class="row justify-content-center">
+
+    <div class="heading">
+        <h1>Confirm Purchase</h1>
+    </div>
+    
+</div>
+        <div class="row justify-content-center" style="color:red">
+            <span ng-repeat="message in showErrorMessage">&nbsp{{message}},</span>
+        </div>
+    </br>
+
+<div class="row">
+
+
+    <div class="col-md-3 bill">
+        
+        <table class="table table-sm">
+            <tr ng-repeat="item in cart.products track by $index"><td>{{item.productName}}</td><td>{{item.price}}<span class="nis">nis</span></td><td>*</td><td>{{item.q}}</td></tr>
+        </table>
+        total : {{cart.total}}
+        
+    </div>
+
+    <div class="col-md-3 creditCardForm">
+        <div class="payment">
+            <div class="form-group form-group-sm details">
+                <label>City</label>
+                <select class="form-control form-control-sm" id="payForm_0" ng-model="payForm[0]">
+                    <option value="Tel-aviv">Tel-aviv</option>
+                    <option value="Jerusalem">Jerusalem</option>
+                    <option value="Haifa">Haifa</option>
+                    <option value="Herzlyia">herzlyia</option>
+                    <option value="Rishon">Rishon le zion</option>
+                    <option value="Holon">Holon</option>
+                    <option value="Rehovot">Rehovot</option>
+                    <option value="Ashkelon">Ashkelon</option>
+                    <option value="Bat yam">Bat yam</option>
+                    <option value="Netanya">Netanya</option>
+                </select>
+            </div>
+            <div class="form-group form-group-sm details">
+                <label for="address">address</label>
+                <input type="text" class="form-control form-control-sm" id="payForm_1" ng-model="payForm[1]">
+            </div>
+            <div class="form-group  form-group-sm details">
+                <label for="date">date</label>
+                <input type="date" class="form-control form-control-sm" id="payForm_2" ng-model="payForm[2]">
+            </div>
+        </div>
+    </div>
+
+   <div class="col-md-5">
+       <div class="row justify-content-center">
+        <div class="creditCardForm">
+            <div class="payment">
+                    <div class="form-group  form-group-smowner">
+                        <label for="owner">Owner</label>
+                        <input type="text" class="form-control form-control-sm" id="payForm_3" ng-model="payForm[3]">
+                    </div>
+                    <div class="form-group  form-group-sm CVV">
+                        <label for="cvv">CVV</label>
+                        <input type="text" class="form-control form-control-sm" id="payForm_4" ng-model="payForm[4]">
+                    </div>
+                    <div class="form-group form-group-sm" id="card-number-field">
+                        <label for="cardNumber">Card Number</label>
+                        <input type="text" class="form-control form-control-sm" id="payForm_5" ng-model="payForm[5]">
+                    </div>
+                    <div class="form-group form-group-sm" id="expiration-date">
+                        <label>Expiration Date</label>
+                        <select id="payForm_6" ng-model="payForm[6]">
+                            <option value="01">January</option>
+                            <option value="02">February </option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <select id="payForm_7" ng-model="payForm[7]">
+                            <option value="16"> 2016</option>
+                            <option value="17"> 2017</option>
+                            <option value="18"> 2018</option>
+                            <option value="19"> 2019</option>
+                            <option value="20"> 2020</option>
+                            <option value="21"> 2021</option>
+                        </select>
+                    </div>
+                    <div class="form-group form-group-sm" id="credit_cards">
+                        <img src="images/visa.jpg" id="visa">
+                        <img src="images/mastercard.jpg" id="mastercard">
+                        <img src="images/amex.jpg" id="amex">
+                    </div>
+                    <div class="form-group" id="pay-now">
+                        <button type="button" class="btn btn-default" id="confirm-purchase" ng-click="pay()">Confirm</button>
+                    </div>
+                
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
