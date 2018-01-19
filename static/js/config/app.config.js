@@ -6,9 +6,9 @@ groceryApp
     }).when('/products',{
         templateUrl: 'templates/products.html'
     }).when('/checkouterr',{
-        templateUrl: 'templates/checkout.html'            
+        template: '<checkout></checkout>'            
     }).when('/checkout',{
-        templateUrl : 'templates/checkout.html'
+        template: '<checkout></checkout>'
     }).otherwise('/products');
         }]
     );
