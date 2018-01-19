@@ -66,4 +66,4 @@ const apiService = ($http) => {
 
 }
 
-app.factory("apiService", apiService);
+groceryApp.factory("apiService", apiService);
