@@ -28,10 +28,10 @@ module.exports = (app,passport,myMiddleware,path,paths) => {
   
    app.get(paths.SUCCESS, myMiddleware.isLoggedIn, (req,res) =>{
     if(req.user.role == 'admin'){
-      res.sendFile(path.resolve('../shopping_online/static/admin.html'));
+      res.sendFile(path.resolve('./static/admin.html'));
     }
     else{
-      res.sendFile(path.resolve('../shopping_online/static/store.html'));
+      res.sendFile(path.resolve('./static/store.html'));
     }
   });
   
@@ -46,7 +46,7 @@ module.exports = (app,passport,myMiddleware,path,paths) => {
   
   app.get(paths.FINISHED, (req,res) => {
     
-     res.sendFile(path.resolve('../shopping_online/static/successful_purchase.html'));
+     res.sendFile(path.resolve('./static/successful_purchase.html'));
 
    });
   

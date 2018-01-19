@@ -14,7 +14,7 @@ const paths = require('./config/paths');
 
 mongoose.connect('mongodb://localhost/Final_project', {useMongoClient: true});
 
-app.use(express.static(__dirname + '/static',{index:false}));
+app.use(express.static('./static',{index:false}));
 app.set('view engine', 'ejs');
 app.set('views',path.join(__dirname, 'static'));
 app.use(session({store: new MongoStore({mongooseConnection: mongoose.connection,ttl: 60 * 60, autoRemove: 'native'}),secret:'abdefg', saveUninitialized: true, resave: true,/*cookie:{maxAge: 60 * 60 * 1000}*/}));
