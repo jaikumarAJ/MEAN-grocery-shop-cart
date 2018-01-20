@@ -14,6 +14,4 @@ let userSchema = new Schema({
 
 });
 
-//const saveUser = (userId,email,name,pswd,city,street) => {}
-
 module.exports = mongoose.model('User', userSchema);
