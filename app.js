@@ -12,7 +12,9 @@ const expressValidator  = require('express-validator');
 const { check, validationResult } = require('express-validator/check');
 const paths = require('./config/paths');
 
-mongoose.connect('mongodb://localhost/Final_project', {useMongoClient: true});
+mongoose.connect('mongodb://localhost/Final_project', {useMongoClient: true}, err => {
+  if(err){console.log(err)};
+});
 
 app.use(express.static('./static',{index:false}));
 app.set('view engine', 'ejs');

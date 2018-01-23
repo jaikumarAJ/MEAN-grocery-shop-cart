@@ -1,4 +1,4 @@
-groceryApp.component('cart',{
+groceryApp.component('cart', {
 
     templateUrl: '../templates/cart.html'
     
