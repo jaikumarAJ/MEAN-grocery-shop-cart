@@ -20,4 +20,15 @@ groceryApp.directive('checkout', () => {
         }
     }
 
+})
+
+
+.directive('headerLogo', () => {
+
+    return {
+
+        templateUrl: 'templates/headerlogo.html',
+        replace:true
+
+    }
 });

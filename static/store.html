@@ -2,6 +2,9 @@
 <html ng-app="groceryApp">
 
     <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <title>Grocery store</title>
         <link rel="stylesheet" href="css/stylesheet.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -16,7 +19,7 @@
         <script src="js/directives/directives.js"></script>
         <script src="js/components/controllers/cart.controller.js"></script>
         <script src="js/directives/controllers/sidebar.controller.js"></script>
-        <title></title>
+        
     </head>
 
     <body>
@@ -28,9 +31,7 @@
             <div class ="row trans-div header-div">
                 <div class="col-md-12">
                     <div class="row">
-                        <div class="col-md-1 col-sm-1">
-                            <img src="images/logo.png" class="logo">
-                        </div>
+                        <header-logo></header-logo>
                         <div class="col-md-11 col-sm-11 justify-content-center">
                             <div class="row justify-content-center align-items-end header-text-row"><span class="coraltext">SHOP </span><span class="bluetext">&nbsp groceries</span></div>
                         </div>

@@ -33,13 +33,13 @@ body{
 
 
 .header-text-row{
-
+    
     height:75%;
-    font-size: 60px;
+    font-size: 70px;
     font-weight: 700;
     position: relative;
     right: 40px;
-    top: 20px;
+    top: 10px;
 
 }
 
@@ -128,6 +128,16 @@ body{
 }
 
 
+.login-form{
+
+    justify-content: space-between;
+    height: 100%;
+    position: relative;
+    top: 15px"
+
+}
+
+
 .form-text{
 
     color: black;
@@ -181,6 +191,18 @@ color:#0063b2
         color: white;
         box-shadow: 5px 5px 5px #002200;
     
+}
+
+.my-carousel{
+
+    height:220px;
+    width:220px;
+
+}
+
+.carousel-image{
+    height: 220px;
+    width: 220px;
 }
 
 
@@ -528,6 +550,14 @@ margin-top: 5px;
 
 @media(max-width: 650px) {
 
+    body{
+
+    background-image: url("../images/back7.jpg");
+    background-size: 300% 150%;
+    height: 100%;
+
+}
+
     .creditCardForm .owner,
     .creditCardForm .CVV,
     .creditCardForm #expiration-date,
@@ -542,5 +572,51 @@ margin-top: 5px;
         text-align: left;
 
     }
+
+
+    
+
+
+}
+
+
+@media(max-width: 1030px) {
+
+    .trans-div{
+
+        margin-bottom: 10px;
+
+    }
+
+    .header-div{
+        font-size: 25px;
+        max-height: 300px;
+    }
+
+
+    .header-text-row{
+
+        height:75%;
+        font-size: 30px;
+        font-weight: 700;
+        position: relative;
+        right: 0px;
+    }
+
+
+    .mybtn{
+
+        margin-left: 0px;
+        margin-bottom: 10px;
+    
+    }
+
+
+    .mybtn-red{
+    
+        margin-left: 0px;
+        margin-bottom: 10px;
+    
+}
 
 }
