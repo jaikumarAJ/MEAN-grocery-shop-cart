@@ -28,7 +28,7 @@ const redirectLogin = (req,res) => {
         else{
             email = req.user.email;
             if(req.user.cart.products.length > 0 && req.user.cart.closed == false){
-                btnCont = '&nbsp &nbsp or <a href="/success"><button type="button" class="btn mybtn">continue shopping</button></a><a href="/logout"><button type="button" class="btn mybtn-red">logout</button></a>'
+                btnCont = '<div class="col-md-auto col-sm-12"><div class="row justify-content-center">or</div></div>&nbsp&nbsp <div class="col-md-3 col-sm-12"><div class="row justify-content-center"><a href="/success"><button type="button" class="btn mybtn">continue shopping</button></a></div></div><div class="col-md-3 col-sm-12"><div class="row justify-content-center"><a href="/logout"><button type="button" class="btn mybtn-red">logout</button></a></div></div>'
                 message = '<div class="row justify-content-center trans-div"><span class="coraltext">MESSAGE:&nbsp </span><span class="bluetext"> you have an open cart from date -&nbsp </span>' + req.user.cart.date.toDateString() + '</div>'
             }
             else{
