@@ -81,18 +81,6 @@ groceryApp.controller('cartController',['$scope','apiService', ($scope,apiServic
     }
 
 
-    $scope.removeProductFromCart = event => {
-
-        itemIndex = event.currentTarget.id.slice(10);
-        apiService.removeProductFromCart(itemIndex).then( data => {
-
-            $scope.cart = data.data;
-
-        });
-
-    }
-
-
     $scope.changeCategory = event => {
 
         $scope.currentCategory = event.currentTarget.id.slice(12);

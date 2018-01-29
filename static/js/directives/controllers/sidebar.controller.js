@@ -1,5 +1,6 @@
-groceryApp.controller('sidebarController', ['$scope', $scope => {
+groceryApp.controller('sidebarController', ['$scope','apiService', ($scope,apiService) => {
 
+ 
     $scope.toggleSidebar = function(){
         
         if(document.getElementById('sideBar').className == "col-md-3 trans-div-green"){
@@ -27,6 +28,17 @@ groceryApp.controller('sidebarController', ['$scope', $scope => {
 
             
         }
+    }
+
+    $scope.removeProductFromCart = event => {
+
+        itemIndex = event.currentTarget.id.slice(10);
+        apiService.removeProductFromCart(itemIndex).then( data => {
+
+            $scope.cart = data.data;
+
+        });
+
     }
 
 }]);
