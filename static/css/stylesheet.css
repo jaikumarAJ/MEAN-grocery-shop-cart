@@ -619,4 +619,42 @@ margin-top: 5px;
     
 }
 
+    #sideBarContent{
+
+        width: 100%;
+        height: 200px;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+}
+
+    .trans-div-store{
+
+    margin-bottom: 20px;
+
+}
+
+    .trans-div-green{
+
+        margin-bottom: 10px;
+
+}
+
+    .cartToggleButton{
+
+        /*height: 50px;
+        width: 50px;
+        color: white;
+        margin: 10px;*/
+        position: relative;
+        bottom: 0px;
+
+}
+
+    .mybtn{
+
+        margin-left: 10px;
+
+    }
+
 }
