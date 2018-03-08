@@ -1,7 +1,7 @@
 @font-face {
 
-    font-family: "ribeye";
-    src: url(fonts/Ribeye-Regular.ttf);
+    font-family: "Fascinate Regular";
+    src: url(Fascinate-Regular.ttf);
 
 }
 
@@ -27,7 +27,7 @@ body{
 .header-div{
 
     font-weight: 300;
-    font-family: "ribeye";
+    font-family: "Fascinate Regular";
     font-size: 50px; 
 
 }
