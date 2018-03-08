@@ -1,7 +1,7 @@
 @font-face {
 
     font-family: "Fascinate Regular";
-    src: url(Fascinate-Regular.ttf);
+    src: url(fonts/Fascinate-Regular.ttf);
 
 }
 
@@ -26,7 +26,7 @@ body{
 
 .header-div{
 
-    font-weight: 300;
+    font-weight: 100;
     font-family: "Fascinate Regular";
     font-size: 50px; 
 
@@ -37,7 +37,7 @@ body{
     
     height:75%;
     font-size: 70px;
-    font-weight: 700;
+    font-weight: 400;
     top: 10px;
 
 }
