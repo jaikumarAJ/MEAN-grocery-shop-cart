@@ -1,0 +1,49 @@
+<div ng-controller='sidebarController'>
+
+
+        <div id="cartButtonRow" class="row">
+            <div id="cartTextDiv" class="col-md-8 col-sm-12">
+                <div class="row justify-content-center">
+                        cart
+                </div>
+            </div>
+            <div id="buttonDiv" class="col-md-1 col-sm-12">
+                <div class="row justify-content-center">
+                    <button type="button" id="cartTogglrButton" class="btn mybtn-red cartToggleButton" ng-click="toggleSidebar()">
+                        <i class="fas fa-shopping-cart fa-2x shoppingcarticon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="sideBarContent">
+
+                <table class="table table-striped table-sm">
+                    <tr ng-repeat="item in cart.products track by $index"><td><div id="cartItemNo{{$index}}" ng-click="removeProductFromCart($event)"><div class="fa fa-times remove-cart-item-icon" aria-hidden="true"></div></div></td><td>{{item.productName}}</td><td>{{item.price}}<span class="nis">nis</span></td><td>*</td><td>{{item.q}}</td></tr>
+                </table>
+            
+        </div>
+        
+        <div id="totalCheckoutRow" class="row">
+             <div class="col-md-12">
+
+                <div class="row justify-content-center checkout">
+
+                   <div class="col-md-12" ng-show="cart.total > 0" ng-click="checkoutClicked()"><a href="#!/checkout"><button type="button" class="btn mybtn checkout-btn">Checkout</button></a></div>
+
+                   <div class="col-md-12" ng-show="!cart.total || cart.total == 0"><button type="button" class="btn checkout-btn checkout-btn-disabled">Checkout</button></div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row justify-content-start">
+                            <span class="total">total: {{cart.total}}</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>

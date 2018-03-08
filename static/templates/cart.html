@@ -1,0 +1,15 @@
+<div class="row cart" ng-controller="cartController">
+
+    
+    <side-bar id="sideBar" cart="cart" class="col-md-3 trans-div-green" ng-hide="sideBar !== true"></side-bar>
+
+
+    <div id="mainView" ng-class="{'col-md-9 trans-div-store' : window.location.hash !== '#!/checkout', 'col-md-12 trans-div-store' : window.location.hash == '#!/checkout'}">
+
+        <div class="mainView" ng-view></div>
+        
+    </div>
+
+
+</div>
+

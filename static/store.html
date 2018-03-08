@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="groceryApp">
+
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/stylesheet.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="js/jquery-3.2.1.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/fontawesome-all.min.js"></script>
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-route.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/filter/filter.js"></script>
+        <script src="js/config/app.config.js"></script>
+        <script src="js/components/services/apiservice.js"></script>
+        <script src="js/components/cart_component.js"></script>
+        <script src="js/directives/directives.js"></script>
+        <script src="js/components/controllers/cart.controller.js"></script>
+        <script src="js/directives/controllers/sidebar.controller.js"></script>
+        
+        <title>Grocery store</title>
+
+    </head>
+
+    <body>
+
+
+        <div class="container" style="height:100%">
+
+
+            <div class ="row trans-div header-div">
+                <div class="col-md-12">
+                    <div class="row">
+                        <header-logo></header-logo>
+                        <div class="col-md-11 col-sm-11 justify-content-center">
+                            <div class="row justify-content-center align-items-end header-text-row"><span class="coraltext">SHOP </span><span class="bluetext">&nbsp groceries</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <cart></cart>
+
+            
+        </div>
+
+
+
+    </body>
+
+</html>

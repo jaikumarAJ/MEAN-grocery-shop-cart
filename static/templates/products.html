@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="row trans-div-categories">
+            <div class="col-md-3 category" ng-repeat="category in categories">
+                <div id=category_id_{{category._id}} ng-click="changeCategory($event)">
+                    <div class="row justify-content-center">
+                        {{category._id}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="row justify-content-around justify-content-sm-around justify-content-md-start products-container">
+
+    	    <div ng-repeat="product in products | categoryFilter:currentCategory" class="col-md-3 product">
+                <div class="row justify-content-around">
+                    <div class="col-md-auto col-sm-auto col-auto">
+                        <a href="#!/products/product/{{product.productId}}"><img id="{{product.productId}}" ng-src={{product.img}} class="product-img" ng-click="productClicked($event)"></a>
+
+        	        <div class="row justify-content-around justify-content-md-around justify-content-sm-around">
+            		    <div class="product-name col-auto col-sm-auto col-md-auto">
+                		{{product.productName}}
+			    </div>
+            	        </div>
+
+                    </div>
+	        </div>
+            </div>	
+
+        </div>
+
+    </div>
+</div>
+

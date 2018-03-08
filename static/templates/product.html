@@ -1,0 +1,24 @@
+<div class="row product-container align-content-center">
+
+    <div class="col-md-12">
+
+        <div class="row justify-content-center">
+                <img ng-src="{{product.img}}" class="product-img-big"> 
+        </div>
+
+        <div class="row justify-content-center">
+                {{product.productName}}
+        </div>
+        
+        <div class="row justify-content-center">
+                {{product.price}}&nbsp <span class="nis">nis</span><span ng-if="product.category == 'meat and fish'">/kg</span>
+        </div>
+        <div class="row justify-content-around">
+                <a href="#!/products"><button type="button" class="btn mybtn btn-product" ng-click="addProduct()">add</button></a>
+                <input ng-model="product.q" type="number" style="width:65px" required>
+                <a href="#!/products"><button type="button" class="btn mybtn-red btn-product">back</button></a>
+        </div>
+
+    </div>
+
+</div>
