@@ -73,7 +73,6 @@ const checkIDAndEmail = (req,res,next) => {
 		valid.email = snip;
             }
 
-		console.log(errors);
             if(errors.length>0){
 
                 errors.forEach((item) => {
@@ -99,7 +98,6 @@ const checkIDAndEmail = (req,res,next) => {
             else{
                 bcrypt.genSalt(9, function(err, salt) {
                     bcrypt.hash(req.body.pswd, salt, function(err, hash) {
-	console.log(req.session);
                         req.session.pswd=hash;
                         req.session.email=req.body.email;
                         req.session.userId=req.body.id;
@@ -116,14 +114,11 @@ const checkIDAndEmail = (req,res,next) => {
 const checkErrsAndSave = (req,res,next) => {
         
     var errors =  validationResult(req).array();
-    console.log('VALIDATIONRESULT: '+ validationResult(req));
-    console.log('ERRORS: ' + errors);
     errormsgs = [];
     
     if(errors.length>0){
         
         errors.forEach((item) => {
-	    console.log('ITEM.MSG: ' + item.msg);
             errormsgs.push(' ' + item.msg);
         })
         
