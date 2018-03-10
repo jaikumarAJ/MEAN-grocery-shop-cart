@@ -23,16 +23,16 @@ const redirectLogin = (req,res) => {
     if(req.isAuthenticated()){
 
         if(req.user.role == 'admin'){
-            btnCont = '&nbsp &nbsp or <a href="/success"><button type="button" class="btn mybtn">GO ADMIN</button></a><a href="/logout"><button type="button" class="btn mybtn-red">logout</button></a>';  
+            btnCont = '<a href="/success"><button type="button" class="btn mybtn">GO ADMIN</button></a><a href="/logout"><button type="button" class="btn mybtn-red">logout</button></a>';  
         }
         else{
             email = req.user.email;
             if(req.user.cart.products.length > 0 && req.user.cart.closed == false){
-                btnCont = '<div class="col-md-auto col-sm-12"><div class="row justify-content-center">or</div></div>&nbsp&nbsp <div class="col-md-3 col-sm-12"><div class="row justify-content-center"><a href="/success"><button type="button" class="btn mybtn">continue shopping</button></a></div></div><div class="col-md-3 col-sm-12"><div class="row justify-content-center"><a href="/logout"><button type="button" class="btn mybtn-red">logout</button></a></div></div>'
+                btnCont = '<a href="/success"><button type="button" class="btn mybtn mrgn-btn">continue shopping</button></a><a href="/logout"><button type="button" class="btn mybtn-red mrgn-btn">logout</button>'
                 message = '<div class="row justify-content-center trans-div"><span class="coraltext">MESSAGE:&nbsp </span><span class="bluetext"> you have an open cart from date -&nbsp </span>' + req.user.cart.date.toDateString() + '</div>'
             }
             else{
-                btnCont = '&nbsp &nbsp or <a href="/success"><button type="button" class="btn mybtn">start shopping</button></a><a href="/logout"><button type="button" class="btn mybtn-red">logout</button></a>';
+                btnCont = '<a href="/success"><button type="button" class="btn mybtn mrgn-btn">start shopping</button></a><a href="/logout"><button type="button" class="btn mybtn-red mrgn-btn">logout</button></a>';
                 message = '';
             }
         }
@@ -42,6 +42,13 @@ const redirectLogin = (req,res) => {
 
 
 const checkIDAndEmail = (req,res,next) => {
+
+    let valid = {};
+    let snip = 'border: 2px solid #ca1d20;';
+    valid.id = '';
+    valid.email = '';
+    valid.pass = '';
+    valid.confpass = '';
 
     User.findOne({ 'userId' : req.body.id},(err,user) => {
       
@@ -53,6 +60,7 @@ const checkIDAndEmail = (req,res,next) => {
         }
         if(user){
             errors.push({msg:'user id exists'});
+	    valid.id = snip;
         }
 
 
@@ -62,16 +70,29 @@ const checkIDAndEmail = (req,res,next) => {
             }
             if(user){
                 errors.push({msg:'email already exists'});
+		valid.email = snip;
             }
-
 
             if(errors.length>0){
 
                 errors.forEach((item) => {
+		if(item.param == 'id'){
+	            valid.id = snip; 
+		}
+		if(item.param == 'email'){
+		    valid.email = snip;
+                }
+		if(item.param == 'pswd'){
+                    valid.pass = snip;
+                }
+		if(item.param == 'cnfpswd'){
+                    valid.conpass = snip;
+                    valid.pass = snip;
+                }
                 errormsgs.push(' ' + item.msg);
             })
 
-                res.render('signup.ejs', {errmsg:errormsgs, id:req.body.id, email:req.body.email});
+                res.render('signup.ejs', {errmsg:errormsgs, id:req.body.id, email:req.body.email, valid:valid});
 
             } 
             else{
@@ -93,7 +114,6 @@ const checkIDAndEmail = (req,res,next) => {
 const checkErrsAndSave = (req,res,next) => {
         
     var errors =  validationResult(req).array();
-    
     errormsgs = [];
     
     if(errors.length>0){

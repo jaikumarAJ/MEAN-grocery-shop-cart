@@ -1,9 +1,10 @@
 @font-face {
 
-    font-family: "ribeye";
-    src: url(fonts/Ribeye-Regular.ttf);
+    font-family: "Fascinate Regular";
+    src: url(fonts/Fascinate-Regular.ttf);
 
 }
+
 
 html{
 
@@ -25,8 +26,8 @@ body{
 
 .header-div{
 
-    font-weight: 300;
-    font-family: "ribeye";
+    font-weight: 100;
+    font-family: "Fascinate Regular";
     font-size: 50px; 
 
 }
@@ -36,10 +37,15 @@ body{
     
     height:75%;
     font-size: 70px;
-    font-weight: 700;
-    position: relative;
-    right: 40px;
+    font-weight: 400;
     top: 10px;
+
+}
+
+
+.mail{
+
+    font-size: 40px;
 
 }
 
@@ -162,14 +168,14 @@ body{
 
 .coraltext{
 
-color: #ca1d20;
+    color: #ca1d20;
 
 }
 
 
 .bluetext{
 
-color:#0063b2
+    color:#0063b2
 
 }
 
@@ -186,23 +192,27 @@ color:#0063b2
 
 .mybtn-red{
     
-        background-color: #ca1d20;
-        margin-left: 15px;
-        color: white;
-        box-shadow: 5px 5px 5px #002200;
+    background-color: #ca1d20;
+    margin-left: 15px;
+    color: white;
+    box-shadow: 5px 5px 5px #002200;
     
 }
 
+
 .my-carousel{
 
-    height:220px;
-    width:220px;
+    height: 220px;
+    width: 220px;
 
 }
 
+
 .carousel-image{
+
     height: 220px;
     width: 220px;
+
 }
 
 
@@ -262,7 +272,7 @@ color:#0063b2
 
 .checkout{
 
-margin-top: 5px;
+    margin-top: 5px;
 
 }
 
@@ -274,14 +284,6 @@ margin-top: 5px;
     margin-left: 15px;
 
 }
-
-
-
-/*.sideBarClosed{
-
-
-
-}*/
 
 
 .logo{
@@ -305,7 +307,7 @@ margin-top: 5px;
     position: relative;
     bottom: 20px;
     overflow-y: auto;
-    height: 370px;
+    height: 350px;
 
 }
 
@@ -313,14 +315,15 @@ margin-top: 5px;
 .product{
 
     font-size: 20px;
+    margin-bottom: 15px;
 
 }
 
 
 .product-container{
 
-    position: relative;
-    top: 90px;
+    height: 405px;	
+    margin-top : 25px;
 
 }
 
@@ -485,7 +488,7 @@ margin-top: 5px;
 
 .creditCardForm #card-number-field {
 
-    width: 100%;
+    width: 90%;
 
 }
 
@@ -510,7 +513,7 @@ margin-top: 5px;
 
 .creditCardForm #pay-now {
 
-    width: 100%;
+    width: 95%;
     margin-top: 20px;
 
 }
@@ -548,49 +551,43 @@ margin-top: 5px;
 }
 
 
+
 @media(max-width: 650px) {
 
     body{
 
-    background-image: url("../images/back7.jpg");
-    background-size: 300% 150%;
-    height: 100%;
+        background-image: none;
+        background-color: #427F50;
 
 }
 
-    .creditCardForm .owner,
-    .creditCardForm .CVV,
-    .creditCardForm #expiration-date,
-    .creditCardForm #credit_cards {
-        width: 100%;
+    .creditCardForm{
 
-    }
+	padding-left: 15px;	
 
-
-    .creditCardForm #credit_cards {
-
-        text-align: left;
-
-    }
-
-
+}
     
-
 
 }
 
 
 @media(max-width: 1030px) {
 
+
     .trans-div{
 
-        margin-bottom: 10px;
+	height: auto;
+        margin-bottom: 12px;
+	background: #CEDEB4;
 
     }
 
+
     .header-div{
+
         font-size: 25px;
         max-height: 300px;
+
     }
 
 
@@ -601,23 +598,10 @@ margin-top: 5px;
         font-weight: 700;
         position: relative;
         right: 0px;
+
     }
 
 
-    .mybtn{
-
-        margin-left: 0px;
-        margin-bottom: 10px;
-    
-    }
-
-
-    .mybtn-red{
-    
-        margin-left: 0px;
-        margin-bottom: 10px;
-    
-}
 
     #sideBarContent{
 
@@ -628,33 +612,45 @@ margin-top: 5px;
 
 }
 
+
     .trans-div-store{
 
-    margin-bottom: 20px;
+        margin-bottom: 20px;
+        background: #CEDEB4;
+        height: auto;
+
 
 }
 
     .trans-div-green{
 
         margin-bottom: 10px;
+	background: #CEDEB4;
 
 }
 
+
     .cartToggleButton{
 
-        /*height: 50px;
-        width: 50px;
-        color: white;
-        margin: 10px;*/
         position: relative;
         bottom: 0px;
 
 }
 
-    .mybtn{
 
-        margin-left: 10px;
+    .mail{
 
-    }
+	font-size: 20px;	
+
+}
+
+
+    .mrgn-btn{
+
+        margin-top: 20px;
+
+}
+
+	
 
 }
