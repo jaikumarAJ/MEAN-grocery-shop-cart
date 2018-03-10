@@ -13,7 +13,7 @@ module.exports = (app,passport,myMiddleware,path,paths) => {
   
   
    app.get(paths.SIGNUP, (req,res) => {
-      res.render('signup.ejs', {errmsg:'',id:'',email:''});
+      res.render('signup.ejs', {errmsg:'',id:'',email:'',idvalid:'', valid:{id:'', email:'', pass:'', conpass:''}});
    }); 
   
   

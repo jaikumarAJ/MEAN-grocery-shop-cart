@@ -43,6 +43,13 @@ const redirectLogin = (req,res) => {
 
 const checkIDAndEmail = (req,res,next) => {
 
+    let valid = {};
+    let snip = 'border: 2px solid #ca1d20;';
+    valid.id = '';
+    valid.email = '';
+    valid.pass = '';
+    valid.confpass = '';
+
     User.findOne({ 'userId' : req.body.id},(err,user) => {
       
         var errors =  validationResult(req).array();
@@ -53,6 +60,7 @@ const checkIDAndEmail = (req,res,next) => {
         }
         if(user){
             errors.push({msg:'user id exists'});
+	    valid.id = snip;
         }
 
 
@@ -62,16 +70,30 @@ const checkIDAndEmail = (req,res,next) => {
             }
             if(user){
                 errors.push({msg:'email already exists'});
+		valid.email = snip;
             }
 
-
+		console.log(errors);
             if(errors.length>0){
 
                 errors.forEach((item) => {
+		if(item.param == 'id'){
+	            valid.id = snip; 
+		}
+		if(item.param == 'email'){
+		    valid.email = snip;
+                }
+		if(item.param == 'pswd'){
+                    valid.pass = snip;
+                }
+		if(item.param == 'cnfpswd'){
+                    valid.conpass = snip;
+                    valid.pass = snip;
+                }
                 errormsgs.push(' ' + item.msg);
             })
 
-                res.render('signup.ejs', {errmsg:errormsgs, id:req.body.id, email:req.body.email});
+                res.render('signup.ejs', {errmsg:errormsgs, id:req.body.id, email:req.body.email, valid:valid});
 
             } 
             else{
@@ -94,12 +116,14 @@ const checkIDAndEmail = (req,res,next) => {
 const checkErrsAndSave = (req,res,next) => {
         
     var errors =  validationResult(req).array();
-    
+    console.log('VALIDATIONRESULT: '+ validationResult(req));
+    console.log('ERRORS: ' + errors);
     errormsgs = [];
     
     if(errors.length>0){
         
         errors.forEach((item) => {
+	    console.log('ITEM.MSG: ' + item.msg);
             errormsgs.push(' ' + item.msg);
         })
         
