@@ -43,12 +43,8 @@ const redirectLogin = (req,res) => {
 
 const checkIDAndEmail = (req,res,next) => {
 
-    let valid = {};
+    let valid = {id:{snip:'', err1:'', err2:'', comma:''}, email:{snip:'', err:''}, pass:{snip:'', err:''}, conpass:{snip:'', err:''}};
     let snip = 'border: 2px solid #ca1d20;';
-    valid.id = '';
-    valid.email = '';
-    valid.pass = '';
-    valid.confpass = '';
 
     User.findOne({ 'userId' : req.body.id},(err,user) => {
       
@@ -60,7 +56,8 @@ const checkIDAndEmail = (req,res,next) => {
         }
         if(user){
             errors.push({msg:'user id exists'});
-	    valid.id = snip;
+	    valid.id.snip = snip;
+	    valid.id.err1 = 'user id exists';
         }
 
 
@@ -74,24 +71,35 @@ const checkIDAndEmail = (req,res,next) => {
             }
 
             if(errors.length>0){
-
+		console.log(errors);
                 errors.forEach((item) => {
-		if(item.param == 'id'){
-	            valid.id = snip; 
-		}
+		if(item.msg == 'you must enter id number'){
+	            valid.id.snip = snip;
+		    valid.id.err1 = 'you must enter id number'; 
+                }
+		if(item.msg == 'id must be a number'){
+                    valid.id.snip = snip; 
+                    valid.id.err2 = 'id must be a number'; 
+                }
 		if(item.param == 'email'){
-		    valid.email = snip;
+		    valid.email.snip = snip;
+		    valid.email.err = 'invalid email';
                 }
 		if(item.param == 'pswd'){
-                    valid.pass = snip;
+                    valid.pass.snip = snip;
+		    valid.pass.err = 'invalid password';
                 }
 		if(item.param == 'cnfpswd'){
-                    valid.conpass = snip;
-                    valid.pass = snip;
+                    valid.conpass.snip = snip;
+		    valid.conpass.err = 'passwords dont match';
+                    valid.pass.snip = snip;
                 }
                 errormsgs.push(' ' + item.msg);
             })
-
+	    if(valid.id.err1 !== ''  && valid.id.err2 !== ''){
+	        valid.id.comma = ',';
+            }
+		console.log(valid);
                 res.render('signup.ejs', {errmsg:errormsgs, id:req.body.id, email:req.body.email, valid:valid});
 
             } 

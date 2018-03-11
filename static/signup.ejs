@@ -24,9 +24,15 @@
                             <img src="images/logo.png" class="logo">
                         </div>
                     </div>
-                    <div class="col-md-11 col-sm-11 justify-content-center">
-                        <div class="row justify-content-center header-text-row">
-                            <span class="bluetext">create new account</span>
+                    <div class="col-12 col-sm-12 col-md-10">
+                        <div class="row justify-content-around header-text-row">
+			    <div class="col-12 col-sm-12 col-md-12">
+                                <div class="coraltext row justify-content-around">
+				    <div class="col-auto col-sm-auto col-md-auto">
+                                        <span class="bluetext">create new account</span>
+				    </div>
+				</div>
+			   </div>
                         </div>
                     </div>
                 </div>
@@ -40,17 +46,25 @@
                         <span class="bluetext">&nbsp enter your details in here</span>
                     </div>
                 </div>
-                <div>
-                    <%= errmsg%>
-                </div>
+      
                 </br>
                 <form action="/signup" method="post">
+		    <div class="row justify-content-end s-form-err">
+		        <div class="col-auto col-sm-auto col-md-auto">
+		            <%= valid.id.err1 %><%= valid.id.comma %>&nbsp<%= valid.id.err2 %>
+			</div>
+		    </div>
                     <div class="form-group row">
                         <div class="col-md-3 bluetext">
                             <label for="id" class="bluetext form-label">id:</label>
                         </div>
                         <div class="col-md-9">
-                            <input id="id" type="text" name="id" class="form-control" style="<%= valid.id %>" onfocus="removestyle('id')" value="<%= id %>">
+                            <input id="id" type="text" name="id" class="form-control" style="<%= valid.id.snip %>" onfocus="removestyle('id')" value="<%= id %>">
+                        </div>
+                    </div>
+		    <div class="row justify-content-end s-form-err">
+                        <div class="col-auto col-sm-auto col-md-auto">
+                            <%= valid.email.err %>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -58,7 +72,12 @@
                             <label for="email" class="bluetext form-label">Email:</label>
                         </div>
                         <div class="col-md-9">
-                            <input id="email" type="text" name="email" class="form-control" style="<%= valid.email %>" onfocus="removestyle('email')" value="<%= email %>">
+                            <input id="email" type="text" name="email" class="form-control" style="<%= valid.email.snip %>" onfocus="removestyle('email')" value="<%= email %>">
+                        </div>
+                    </div>
+		    <div class="row justify-content-end s-form-err">
+                        <div class="col-auto col-sm-auto col-md-auto">
+                            <%= valid.pass.err %>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -66,7 +85,12 @@
                             <label for="pswd" class="bluetext form-label">password</label>
                         </div>
                         <div class="col-md-9">
-                            <input id="pswd" type="password" name="pswd" class="form-control" style="<%= valid.pass %>" onfocus="removestyle('pswd')">
+                            <input id="pswd" type="password" name="pswd" class="form-control" style="<%= valid.pass.snip %>" onfocus="removestyle('pswd')">
+                        </div>
+                    </div>
+		    <div class="row justify-content-end s-form-err">
+                        <div class="col-auto col-sm-auto col-md-auto">
+                            <%= valid.conpass.err %>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -74,7 +98,7 @@
                             <label for="confirmPassword" class="bluetext form-label">confirm password</label>
                         </div>
                         <div class="col-md-9">
-                            <input id="cnfpswd" type="password" name="cnfpswd" class="form-control" style="<%= valid.conpass %>" onfocus="removestyle('cnfpswd')">
+                            <input id="cnfpswd" type="password" name="cnfpswd" class="form-control" style="<%= valid.conpass.snip %>" onfocus="removestyle('cnfpswd')">
                         </div>
                     </div>
                     <div class="row justify-content-end">

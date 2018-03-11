@@ -216,6 +216,17 @@ body{
 }
 
 
+.s-form-err{
+
+    padding-right: 20px;
+    color: #ca1d20;
+    font-size: 20px;
+    height: 25px;
+
+}
+
+
+
 .checkout-btn{
 
     position: relative;
@@ -572,6 +583,15 @@ body{
 
 
 @media(max-width: 1030px) {
+
+
+    .s-form-err{
+
+        position: relative;
+	top: 45px;
+	font-size: 15px;
+
+    }
 
 
     .trans-div{
