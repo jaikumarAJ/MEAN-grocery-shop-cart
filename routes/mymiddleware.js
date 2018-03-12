@@ -43,8 +43,8 @@ const redirectLogin = (req,res) => {
 
 const checkIDAndEmail = (req,res,next) => {
 
-    let valid = {id:{snip:'', err1:'', err2:'', comma:''}, email:{snip:'', err:''}, pass:{snip:'', err:''}, conpass:{snip:'', err:''}};
     let snip = 'border: 2px solid #ca1d20;';
+    let valid = {id:{snip:'', err1:'', err2:'', comma:''}, email: {snip: '', err: ''}, pass: {snip: '', err: ''}, conpass: {snip: '', err: ''}, city: {snip: '', err: ''}, adress: {snip: '', err: ''}, name: {snip: '', err: ''}};
 
     User.findOne({ 'userId' : req.body.id},(err,user) => {
       
@@ -67,11 +67,11 @@ const checkIDAndEmail = (req,res,next) => {
             }
             if(user){
                 errors.push({msg:'email already exists'});
-		valid.email = snip;
+		valid.email.snip = snip;
+		valid.email.err = 'email already exists';
             }
 
             if(errors.length>0){
-		console.log(errors);
                 errors.forEach((item) => {
 		if(item.msg == 'you must enter id number'){
 	            valid.id.snip = snip;
@@ -99,8 +99,7 @@ const checkIDAndEmail = (req,res,next) => {
 	    if(valid.id.err1 !== ''  && valid.id.err2 !== ''){
 	        valid.id.comma = ',';
             }
-		console.log(valid);
-                res.render('signup.ejs', {errmsg:errormsgs, id:req.body.id, email:req.body.email, valid:valid});
+                res.render('signup.ejs', {id: req.body.id, email: req.body.email, valid: valid});
 
             } 
             else{
@@ -109,7 +108,7 @@ const checkIDAndEmail = (req,res,next) => {
                         req.session.pswd=hash;
                         req.session.email=req.body.email;
                         req.session.userId=req.body.id;
-                        res.render('signup2.ejs',{errmsg:'',city:'',street:'',name:''});
+                        res.render('signup2.ejs',{errmsg:'', valid: valid , city:'',street:'',name:''});
                     });
                 });
             }  
@@ -122,15 +121,26 @@ const checkIDAndEmail = (req,res,next) => {
 const checkErrsAndSave = (req,res,next) => {
         
     var errors =  validationResult(req).array();
+    let valid = {city: {snip: '', err: ''}, adress: {snip: '', err: ''}, name: {snip: '', err: ''}};
     errormsgs = [];
     
     if(errors.length>0){
-        
+	console.log(errors);        
         errors.forEach((item) => {
-            errormsgs.push(' ' + item.msg);
+            if(item.value == 'choose'){
+	        valid.city.snip = 'border: 2px solid #ca1d20;';
+		valid.city.err = 'city is required';
+            }
+	    if(item.msg == 'adress is required'){
+                valid.adress.snip = 'border: 2px solid #ca1d20;';
+		valid.adress.err = 'adress is required';
+            }
+	    if(item.msg == 'name is required'){
+		valid.name = {snip: 'border: 2px solid #ca1d20;', err: 'name is required'};
+            }
         })
         
-        res.render('signup2.ejs', {errmsg:errormsgs, street:req.body.street, name:req.body.name});
+        res.render('signup2.ejs', {errmsg:errormsgs, valid, street:req.body.street, name:req.body.name});
         
     }
     else{
@@ -152,7 +162,7 @@ check('email','invalid mail address').isEmail(),
 check('pswd','invalid password').isLength({min:3}), 
 check('cnfpswd','passwords dont match').custom((value, { req }) => value === req.body.pswd)];
 
-const validateInputs2 = [check('city','city required').isLength({min:1}),
+const validateInputs2 = [check('city','city required').custom((value, {req}) => value !== 'choose'),
 check('street','adress is required').isLength({min:1}),
 check('name','name is required').isLength({min:1})];
 

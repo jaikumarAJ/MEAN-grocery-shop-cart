@@ -45,12 +45,18 @@
                 </div>
                 </br>
                 <form action="/signup2" method="post">
+		    <div class="row justify-content-end s-form-err">
+                        <div class="col-auto col-sm-auto col-md-auto">
+                            <%= valid.city.err %>
+                        </div>
+                    </div>
                     <div class="form-group row">
                         <div class="col-md-3 bluetext">
                             <label for="city">city</label>
                         </div>
                         <div class="col-md-9">
-                            <select class="form-control" id="city" name="city">
+                            <select class="form-control" style="<%= valid.city.snip %>" id="city" name="city" onfocus="removestyle()">
+				<option value="choose">choose your city</option>
                                 <option value="Tel-aviv">Tel-aviv</option>
                                 <option value="Jerusalem">Jerusalem</option>
                                 <option value="Haifa">Haifa</option>
@@ -64,12 +70,22 @@
                             </select>
                         </div>
                     </div>
+	            <div class="row justify-content-end s-form-err">
+                        <div class="col-auto col-sm-auto col-md-auto">
+                            <%= valid.adress.err %>
+                        </div>
+                    </div>
                     <div class="form-group row">
                         <div class="col-md-3 bluetext">
                             <label for="street" class="bluetext form-label">street/number</label>
                         </div>
                         <div class="col-md-9">
-                            <input id="street" type="text" name="street" class="form-control" value="<%= street %>">
+                            <input id="street" type="text" name="street" class="form-control" value="<%= street %>" style="<%= valid.adress.snip %>">
+                        </div>
+                    </div>
+		    <div class="row justify-content-end s-form-errname">
+                        <div class="col-auto col-sm-auto col-md-auto">
+                            <%= valid.name.err %>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -77,7 +93,7 @@
                             <label for="name" class="bluetext form-label"></label>name</label>
                         </div>
                         <div class="col-md-9">
-                            <input id="city" type="text" name="name" class="form-control" value="<%= name %>">
+                            <input id="name" type="text" name="name" class="form-control" value="<%= name %>" style="<%= valid.name.snip %>">
                         </div>
                     </div>
                     <div class="row justify-content-end">

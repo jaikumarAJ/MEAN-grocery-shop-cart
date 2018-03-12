@@ -216,15 +216,16 @@ body{
 }
 
 
-.s-form-err{
+.s-form-err, .s-form-errname{
 
     padding-right: 20px;
     color: #ca1d20;
     font-size: 20px;
-    height: 25px;
+    height: 10px;
+    position: relative;
+    bottom: 15px;
 
 }
-
 
 
 .checkout-btn{
@@ -586,9 +587,18 @@ body{
 
 
     .s-form-err{
+	
+	height: 0px;
+	top: 25px;
+	font-size: 15px;
 
-        position: relative;
-	top: 45px;
+    }
+
+
+    .s-form-errname{
+	
+	height: 0px;
+	top: 18px;
 	font-size: 15px;
 
     }
